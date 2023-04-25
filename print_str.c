@@ -7,9 +7,10 @@
 int print_str(va_list ap)
 {
 	char *str = va_arg(ap, char *);
-	if (str == NULL)
-		str = "(null)";
-	return (write(1, str, strlen(str)));
+	int count = 0;
+	while (str[count])
+		count++;
+	return (write(1, str, count));
 }
 
 
