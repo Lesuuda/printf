@@ -22,39 +22,32 @@ int _printf(const char *format, ...)
 
 	while (format[index])
 	{
-		for (index = 0; index < count; index++)
-		{
 			if (format[index] != '%')
 			{
 				value = write(1, &format[index], 1);
-				count = value + value;
+				count = count + value;
 				index++;
 				continue;
 
 			}
-			if (format[index] == '%')
-			{
-				f = _specifier(&format[index + 1]);
-				if (f != NULL)
+			f = _specifier(&format[index + 1]);
+			if (f != NULL)
 				{
 					value = f(ap);
 					count = value + count;
 					index = index + 2;
 					continue;
 				}
-				if (format[index + 1] == '\0')
-				{
-					break;
-				}
-				if (format[index + 1] != '\0')
+			if (format[index + 1] != '\0')
 				{
 					value = write(1, &format[index + 1], 1);
 					count = value + value;
 					index = index + 2;
 					continue;
 				}
-			}
-		}
+				break;
 	}
+	va_end(ap);
+
 	return (count);
 }

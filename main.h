@@ -6,6 +6,7 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <stddef.h>
+#include <string.h>
 
 
 int (*_specifier(const char *format))(va_list);

@@ -6,7 +6,10 @@
  */
 int print_str(va_list ap)
 {
-	return (0);
+	char *str = va_arg(ap, char *);
+	if (str == NULL)
+		str = "(null)";
+	return (write(1, str, strlen(str)));
 }
 
 

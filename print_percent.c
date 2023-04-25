@@ -6,7 +6,9 @@
  */
 int print_percent(va_list ap)
 {
-	return (0);
+	(void)ap;
+	return (write(1, "%", 1));
+
 }
 
 
