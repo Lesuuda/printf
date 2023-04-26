@@ -16,6 +16,8 @@ int print_str(va_list);
 int print_percent(va_list);
 int print_int(va_list);
 int print_decimal(va_list);
+int print_binary(va_list);
+int print_binary_rec(unsigned int, int *);
 /**
  * struct func - struct to determine the specifier to print
  * @t: character to compare

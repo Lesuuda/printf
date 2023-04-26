@@ -1,0 +1,35 @@
+#include "main.h"
+int main(void)
+{
+int count;
+int len1;
+int len2;
+
+unsigned int num1 = 5;
+unsigned int num2 = -98;
+
+count = _printf("%s\n", "ALX is cool!");
+_printf("Length of the string is: %d\n", count - 1);
+
+
+count = _printf("My name sterats with %c\n", 'L');
+_printf("Its length is %d\n", count - 1);
+
+_printf("The percent sign is: %%\n");
+
+count = _printf("Printing an integer: %d\n", 12345);
+_printf("Number of characters printed: %d\n", count);
+count = _printf("Printing a negative integer: %d\n", -9876);
+_printf("Number of characters printed: %d\n", count);
+
+count = _printf("Printing a decimal: %i\n", 12345);
+_printf("Number of characters printed: %d\n", count);
+
+len1 = _printf("%b\n", num1);
+len2 = _printf("%b\n", num2);
+
+_printf("lengths: %d\n, %d\n", len1, len2);
+
+return (0);
+}
+
